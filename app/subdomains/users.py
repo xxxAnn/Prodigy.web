@@ -12,6 +12,11 @@ bp = Blueprint('users', __name__, url_prefix='/users')
 @bp.route('/<user_id>')
 def view_user(user_id):
     error = None
+    
+    if user_id == "me":
+        if g.user:
+            user_id = g.user["id"]
+
     selected_user = get_db().execute(
         'SELECT * FROM user WHERE id = ?', (user_id,)
     ).fetchone()

@@ -15,10 +15,18 @@
     height: 50px;
   }
 
+  body {
+    background-image: url('images/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
   h1 {
     font-size: 150%;
-    font-family: 'fantasy';
+    font-family: cursive, sans-serif;
     font-weight: 10;
+    color: grey;
   }
 
   input[type=text], select, textarea {
@@ -40,9 +48,11 @@
   }
   
   label {
+    margin-top: 0;
     padding: 12px 12px 12px 0;
     display: inline-block;
-    font-family: 'geneva';
+    color: grey;
+    font-family: Verdana, Geneva;
   }
   
   input[type=submit] {
@@ -61,11 +71,16 @@
   }
   
   .container {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 25px;
-    background:  #003cff;
+    background:  #ffffff;
     width: 30%;
     margin: auto;
-    padding: 20px;
+    padding: 10px;
+    text-align: center;
   }
   
   .col-25 {
@@ -79,8 +94,19 @@
     width: 75%;
     margin-top: 6px;
   }
-  
+
+  .centered {
+    margin-top: 10%;
+    margin-left: 45%;
+    width: 50%;
+  }
+
+  .row {
+    margin-top: 20px;
+  }
+
   .row:after {
+    margin-top: 10px;
     content: "";
     display: table;
     clear: both;
