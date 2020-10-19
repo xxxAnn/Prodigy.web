@@ -1,0 +1,53 @@
+body {
+    background-image: url('images/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+.mainbox {
+    position: static;
+    margin: auto;
+    width: 1400px;
+    height: 1200px;
+    border-radius: 3px;
+    background-color:#e0e0e0be;
+}
+
+.icon {
+    border-radius: 25px;
+    overflow: hidden;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    z-index: 3;
+}
+
+img {
+    transform: translateX(-65px);
+}
+
+h1 {
+    z-index: 1;
+    position: relative;
+    transform: translate(-400px, -120px);
+    font-size: 40px;
+    font-family: cursive, sans-serif;
+    font-weight: 10;
+    color: rgb(255, 255, 255);
+  }
+
+.topbanner {
+    position: absolute;
+    width: 1400px;
+    height: 120px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #9763db;
+}
+
+h1 {
+    align-items: center;
+}
