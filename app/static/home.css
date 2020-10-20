@@ -10,7 +10,8 @@ body {
     margin: auto;
     width: 1400px;
     height: 1200px;
-    border-radius: 3px;
+    border-radius: 25px;
+    overflow: hidden;
     background-color:#e0e0e0be;
 }
 
@@ -37,8 +38,22 @@ h1 {
     color: rgb(255, 255, 255);
   }
 
+input[type=text] {
+    z-index: 1;
+    text-align: justify;
+    position: relative;
+    transform: translate(-50px, -200px);
+    float: right;
+    padding-left: 15px;
+    border-radius: 25px;
+    font-size: 20px;
+    background-color: lavenderblush;
+    font-family: cursive, sans-serif;
+    font-weight: 10;
+}
+
 .topbanner {
-    position: absolute;
+    position: static;
     width: 1400px;
     height: 120px;
     align-items: center;
@@ -51,3 +66,4 @@ h1 {
 h1 {
     align-items: center;
 }
+  
