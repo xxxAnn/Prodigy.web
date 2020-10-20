@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
-{% block header %}
-   {% block title %}Home{% endblock %}
-{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
 <div class="mainbox">
     <div class="topbanner">
         <div class="icon">
-            <img src="../static/images/icon.png">
+            <a href="{{ url_for('homepage.main')}}"><img src="../static/images/icon.png"></a>
         </div>
         <h1>Prodigy Games</h1>
     <div>

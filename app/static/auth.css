@@ -49,6 +49,7 @@
   
   label {
     margin-top: 0;
+    margin-left: 30%;
     padding: 12px 12px 12px 0;
     display: inline-block;
     color: grey;
@@ -64,6 +65,7 @@
     border-radius: 4px;
     cursor: pointer;
     float: right;
+    font-family: cursive;
   }
   
   input[type=submit]:hover {
@@ -95,10 +97,21 @@
     margin-top: 6px;
   }
 
+  .below {
+    margin-top: 0%;
+  }
   .centered {
-    margin-top: 10%;
-    margin-left: 45%;
+    transform: translate(-20px,-20px);
     width: 50%;
+    margin-left: 45%;
+  }
+
+  .totheleft {
+    transform: translate(20%, 125%);
+    color: rgb(255, 0, 0);
+    max-width: 40%;
+    font-family: cursive, serif;
+    width: 200px
   }
 
   .row {

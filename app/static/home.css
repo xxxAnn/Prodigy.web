@@ -8,9 +8,10 @@ body {
 .mainbox {
     position: static;
     margin: auto;
-    width: 1400px;
+    width: 1200px;
     height: 1200px;
-    border-radius: 3px;
+    border-radius: 25px;
+    overflow: hidden;
     background-color:#e0e0e0be;
 }
 
@@ -30,7 +31,7 @@ img {
 h1 {
     z-index: 1;
     position: relative;
-    transform: translate(-400px, -120px);
+    transform: translate(-300px, -120px);
     font-size: 40px;
     font-family: cursive, sans-serif;
     font-weight: 10;
@@ -38,8 +39,8 @@ h1 {
   }
 
 .topbanner {
-    position: absolute;
-    width: 1400px;
+    position: static;
+    width: 1200px;
     height: 120px;
     align-items: center;
     align-content: center;
