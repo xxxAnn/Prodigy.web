@@ -9,6 +9,7 @@ from .subdomains.home import bp as home_bp
 from .subdomains.admin import bp as admin_bp
 from .subdomains.specials import bp as specials_bp
 
+
 def create_app(test_config=None):
     app = Flask(__name__)
     

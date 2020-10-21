@@ -1,0 +1,49 @@
+.draggable {
+    z-index: 0;
+    position: absolute;
+    cursor: move;
+    text-align: center;
+    overflow: hidden;
+    border: 2px solid #4f4f50;
+    border-radius: 200px;
+    float: center;
+    margin-left: 400px;
+    margin-top: 50px;
+    width: 400px;
+    height: 400px;
+}
+
+.draggable input[type=text] {
+    transform: translate(0px, 50px);
+    border-radius: 25px;
+    width: 300px;
+    height: 60px;
+    font: monospace sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.draggable input[type=submit] {
+    transform: translate(0px, 50px);
+    border-radius: 25px;
+    width: 300px;
+    background-color: limegreen;
+    color: white;
+    height: 60px;
+    font: monospace sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.draggable input[type=submit]:hover {
+    transform: translate(0px, 50px);
+    border-radius: 25px;
+    width: 300px;
+    background-color: lime;
+    color: white;
+    height: 60px;
+    font: monospace sans-serif;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+}

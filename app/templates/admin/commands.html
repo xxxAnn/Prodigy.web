@@ -1,0 +1,15 @@
+{% extends 'navs.html' %}
+{% block title %}Admin{% endblock %}
+{% block header %}Admin:Commands{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='admincommands.css') }}">
+<div class="draggable" id="commandprompt">
+  <h1 id="roleheader">Commands</h1>
+  <form method="POST">
+      <input type=text placeholder="Entity" name="Entity" id="Entity">
+      <input type=text placeholder="Action" name="Action" id="Action">
+      <input type=submit placeholder="Submit" name="Action" id="Action">
+  </form>
+</div>
+<script src="../static/newslide.js"></script>
+{% endblock %} 
