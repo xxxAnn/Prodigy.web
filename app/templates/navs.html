@@ -9,8 +9,8 @@
                 <a href="{{ url_for('homepage.main')}}"><img src="../static/images/icon.png"></a>
             </div>
             <h1>{% block header%}{% endblock %}</h1>
-            <form method="POST">
-                <input type="text" name="searchcontent" id="searchcontent" placeholder="Search..">
+            <form method="GET" action="/special/search">
+                <input type="text" name="q" id="q" placeholder="Search..">
             </form>
         </div>
         {% block content %}{% endblock %}

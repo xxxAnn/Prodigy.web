@@ -16,6 +16,11 @@ body {
 }
 
 .icon {
+    user-select: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
     border-radius: 25px;
     overflow: hidden;
     align-items: center;
@@ -29,6 +34,11 @@ body {
 }
 
 .topbanner h1 {
+    user-select: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
     z-index: 1;
     position: relative;
     transform: translate(-300px, -120px);
@@ -40,6 +50,11 @@ body {
   }
 
 .topbanner input[type=text] {
+    user-select: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
     z-index: 1;
     text-align: justify;
     position: relative;

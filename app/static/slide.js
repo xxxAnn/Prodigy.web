@@ -17,10 +17,19 @@ var description ={
     xOffset: 0,
     yOffset: 0
 }
+var img = {
+    dragItem: document.getElementById("imgdiv"),
+    header: document.getElementById("imgheader"),
+    text: document.getElementById("imgtext"),
+    active: false,
+    xOffset: 0,
+    yOffset: 0
+}
 
 var moveables = {
     descx: description,
-    rolex: role
+    rolex: role,
+    imgx: img
 }
 
 container.addEventListener("mousedown", dragStart, false);

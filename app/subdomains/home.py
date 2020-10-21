@@ -10,9 +10,6 @@ from ..db import get_db
 bp = Blueprint('homepage', __name__, url_prefix='')
 
 
-@bp.route('/', methods=('GET', 'POST'))
+@bp.route('/')
 def main():
-    if request.method == "POST":
-        return redirect(url_for('users.view_user', user_id= request.form['searchcontent']))
-
     return render_template('home.html')
