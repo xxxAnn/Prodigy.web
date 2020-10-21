@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <title>{% block title %}{% endblock %} ー Prodigy Games</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navs.css') }}">
+    <div class="mainbox" id="mainbox">
+        <div class="topbanner">
+            <div class="icon">
+                <a href="{{ url_for('homepage.main')}}"><img src="../static/images/icon.png"></a>
+            </div>
+            <h1>{% block header%}{% endblock %}</h1>
+            <form method="POST">
+                <input type="text" name="searchcontent" id="searchcontent" placeholder="Search..">
+            </form>
+        </div>
+        {% block content %}{% endblock %}
+    </div>
+</html>

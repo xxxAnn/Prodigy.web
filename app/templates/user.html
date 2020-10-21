@@ -1,8 +1,15 @@
-{% extends 'base.html' %}
-{% block header %}
-  <div class="titlebox"><h1>{% block title %}{{ username }}{% endblock %}</h1></div> 
-{% endblock %}
-
+{% extends 'navs.html' %}
+{% block title %}{{username}}{% endblock %}
+{% block header %}User:{{username}}{% endblock %}
 {% block content %}
-<p>{{ username }}</p>
-{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='user.css') }}">
+<div class="role" id="role">
+  <h1 id="roleheader">Role</h1>
+  <p id="roletext">{{ hasadmin }}</p>
+</div>
+<div class="description" id="description">
+  <h1 id="descriptionheader">Description</h1>
+  <p id="descriptiontext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+</div>
+<script src="../static/slide.js"></script>
+{% endblock %} 
