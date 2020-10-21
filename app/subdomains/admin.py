@@ -21,6 +21,11 @@ def process_command(lvl, d, k, c, v):
     if str.lower(c) == "makeadmin":
         if int(lvl)>int(v):
             db = get_db()
+            selected_user = db.execute(
+            'SELECT * FROM user WHERE id = ?', (k,)).fetchone()
+            if selected_user["AdminLevel"]:
+                if selected_user["AdminLevel"]>=int(lvl):
+                    return
             db.execute('UPDATE user SET AdminLevel = {0} WHERE id = {1}'.format(v, k))
             db.commit()
 

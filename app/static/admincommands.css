@@ -1,4 +1,4 @@
-.commandprompt {
+.draggable {
     z-index: 0;
     position: absolute;
     cursor: move;
@@ -13,7 +13,7 @@
     height: 400px;
 }
 
-.commandprompt input[type=text] {
+.draggable input[type=text] {
     transform: translate(0px, 50px);
     border-radius: 25px;
     width: 300px;
@@ -23,7 +23,7 @@
     text-align: center;
 }
 
-.commandprompt input[type=submit] {
+.draggable input[type=submit] {
     transform: translate(0px, 50px);
     border-radius: 25px;
     width: 300px;
@@ -35,7 +35,7 @@
     text-align: center;
 }
 
-.commandprompt input[type=submit]:hover {
+.draggable input[type=submit]:hover {
     transform: translate(0px, 50px);
     border-radius: 25px;
     width: 300px;
