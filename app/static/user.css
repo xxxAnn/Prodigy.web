@@ -1,4 +1,4 @@
-.role h1 {
+#role h1 {
     user-select: none; 
     -webkit-user-select: none; 
     -khtml-user-select: none; 
@@ -10,7 +10,7 @@
     font-family: cursive, sans-serif;
 }
 
-.role p {
+#role p {
     user-select: none; 
     -webkit-user-select: none; 
     -khtml-user-select: none; 
@@ -21,7 +21,7 @@
     font-family: cursive, sans-serif;
 }
 
-.role {
+#role {
     z-index: 0;
     position: absolute;
     cursor: move;
@@ -35,7 +35,7 @@
     height: 225px;
 }
 
-.description {
+#description {
     z-index: 0;
     position: absolute;
     cursor: move;
@@ -49,25 +49,43 @@
     height: 225px;
 }
 
-input[type=file] {
+#imgdiv input[type=file] {
     user-select: none; 
     -webkit-user-select: none; 
     -khtml-user-select: none; 
     -moz-user-select: none; 
     -ms-user-select: none; 
-    transform: translate(20px, 75px);
+    border-radius: 2px;
+    transform: translate(30px, 25px);
 }
 
-input[type=submit] {
+#imgdiv input[type=submit] {
     user-select: none; 
     -webkit-user-select: none; 
     -khtml-user-select: none; 
     -moz-user-select: none; 
     -ms-user-select: none; 
-    transform: translate(0px, 75px);
+    background: limegreen;
+    border-radius: 25px;
+    transform: translate(10px, 25px);
 }
 
-.img {
+#imgdiv input[type=submit]:hover {
+    user-select: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    background: lime;
+    border-radius: 25px;
+    transform: translate(10px, 28px);
+}
+
+#imgdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     z-index: 0;
     position: absolute;
     cursor: move;
@@ -81,8 +99,14 @@ input[type=submit] {
     height: 225px;
 }
 
+#imgdiv img {
+    position: relative;
+    size: fill;
+    border-radius: 100px;
+}
 
-.description h1 {
+
+#description h1 {
     user-select: none; 
     -webkit-user-select: none; 
     -khtml-user-select: none; 
@@ -94,7 +118,7 @@ input[type=submit] {
     font-family: cursive, sans-serif;
 }
 
-.description p {
+#description p {
     user-select: none; 
     -webkit-user-select: none; 
     -khtml-user-select: none; 

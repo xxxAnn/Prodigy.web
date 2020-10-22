@@ -25,22 +25,30 @@ def process_command(lvl, d, k, c, v):
             'SELECT * FROM user WHERE id = ?', (k,)).fetchone()
             if selected_user["AdminLevel"]:
                 if selected_user["AdminLevel"]>=int(lvl):
-                    return
+                    return "Unauthorized"
             db.execute('UPDATE user SET AdminLevel = {0} WHERE id = {1}'.format(v, k))
             db.commit()
+            return None
+        else:
+            return "Unauthorized"
+    return "Could not parse command"
 
 @bp.route('/commands', methods=("GET", "POST"))
 def commands():
     if is_admin():
+        error = None
         if request.method == "POST":
-            entity = request.form["Entity"]
-            action = request.form["Action"]
-            domain = entity.split(":")[0]
-            key = entity.split(":")[1]
-            command = action.split(":")[0]
-            value = action.split(":")[1]
-            print(value)
-            process_command(g.user["AdminLevel"], domain, key, command, value)
-        return render_template('admin/commands.html')
+            try:
+                entity = request.form["Entity"]
+                action = request.form["Action"]
+                domain = entity.split(":")[0]
+                key = entity.split(":")[1]
+                command = action.split(":")[0]
+                value = action.split(":")[1]
+            except:
+                error="Could not parse command"
+            if error==None:
+                error = process_command(g.user["AdminLevel"], domain, key, command, value)
+        return render_template('admin/commands.html', errormessage=error or "", successmessage="Success" if error==None else "")
     else:
         return "Unauthorized", 403

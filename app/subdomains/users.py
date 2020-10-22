@@ -1,7 +1,9 @@
 import functools
+import os
+import glob
 
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, session, url_for
+    Blueprint, flash, g, redirect, render_template, request, session, url_for, send_file
 )
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -32,9 +34,6 @@ def view_user(user_id):
         'SELECT * FROM user WHERE id = ?', (user_id,)
     ).fetchone()
 
-    print(selected_user["AdminLevel"])
-
-
     if not selected_user:
         error = "User doesn't exist"
     
@@ -46,6 +45,23 @@ def view_user(user_id):
 
     if not error:
         hasadmin = "User" if selected_user["AdminLevel"] == None else to_admin_level(selected_user["AdminLevel"])
-        return render_template('user.html', username=selected_user["username"], hasadmin=hasadmin, isautheduser=isautheduser)
+        return render_template('user.html', username=selected_user["username"], hasadmin=hasadmin, isautheduser=isautheduser, pfp=False, userid=selected_user["id"])
 
     return error
+
+@bp.route('/<user_id>/pfp', methods=("GET",))
+def view_pfp(user_id):
+
+    username = get_db().execute(
+        'SELECT * FROM user WHERE id = ?', (user_id,)
+    ).fetchone()["username"]
+
+    ddir = os.path.join("app\\uploads", username)
+
+    if os.path.exists(ddir):
+        print('ayo')
+        if txt := glob.glob(os.path.join(ddir, "Current.*")):
+            extension = txt[0].split(".")[1]
+            return send_file(os.path.join("uploads", username, "Current."+extension))
+    return send_file("static\\images\\defaultprofile.png")
+    

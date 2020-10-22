@@ -3,7 +3,7 @@ container = document.getElementById("mainbox")
 var elements = document.getElementsByClassName("draggable");
 var moveables = {};
 
-for (i=0; i < elements.length; i++) {
+for (let i=0; i < elements.length; i++) {
     moveables[elements[i].id] = createMoveable(elements[i])
 }
 
@@ -14,9 +14,8 @@ function createMoveable(elemn) {
         xOffset: 0,
         yOffset: 0
     }
-    for (i = 0; i < elemn.children.length; i++) {
+    for (let i = 0; i < elemn.children.length; i++) {
         let v = elemn.children[i];
-        console.log(v);
         result[v.id] = v;
     }
     return result

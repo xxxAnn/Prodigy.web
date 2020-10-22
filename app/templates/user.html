@@ -1,27 +1,31 @@
-{% extends 'navs.html' %}
+tlvl{% extends 'navs.html' %}
 {% block title %}{{username}}{% endblock %}
 {% block header %}User:{{username}}{% endblock %}
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='user.css') }}">
-<div class="role" id="role">
+
+<div class="draggable" id="role">
   <h1 id="roleheader">Role</h1>
   <p id="roletext">{{ hasadmin }}</p>
 </div>
-<div class="description" id="description">
+
+<div class="draggable" id="description">
   <h1 id="descriptionheader">Description</h1>
   <p id="descriptiontext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
 </div>
-<div class="img" id="imgdiv">
+
+<div class="draggable" id="imgdiv">
   <h1 id="imgheader"></h1>
   <p id="imgtext"></p>
-  {% if profileimage %}
-    <img src="{{ url_for('send_file', filename=profileimage) }}">
-  {% elif isautheduser %}
-  <form action="{{ url_for('special.upload') }}" method="POST" enctype="multipart/form-data">
-    <input type="file" name="upfile" id="upfile">
-    <input type="submit" value="Upload Image" name="submit">
-  </form>
-  {% endif %}
+    {% if pfp %}
+    <form action="{{ url_for('special.upload') }}" method="POST" enctype="multipart/form-data">
+      <input type="file" name="upfile" id="upfile">
+      <input type="submit" value="Upload Image" name="submit">
+    </form>
+    {% else %}
+    <img src="{{url_for('users.view_pfp', user_id=userid)}}">
+    {% endif %}
 </div>
-<script src="../static/slide.js"></script>
+
+<script src="../static/newslide.js"></script>
 {% endblock %} 
